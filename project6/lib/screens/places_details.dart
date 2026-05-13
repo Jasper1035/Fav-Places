@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:project6/screens/places.dart';
+import 'package:project6/models/place.dart';
 
 class PlacesDetailsScreen extends StatelessWidget {
-  PlacesDetailsScreen({super.key, required this.place});
+  const PlacesDetailsScreen({super.key, required this.place});
 
-  final PlacesScreen place;
+  final Place place;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(title: Text(place.title)),
+      body: Center(
+        child: Text(
+          place.title,
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
+      ),
+    );
   }
 }
